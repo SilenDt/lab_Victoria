@@ -28,7 +28,7 @@ class TestPub(unittest.TestCase):
         self.assertEqual(1007.00, self.instance_of_pub.till)
 
     def test_pub_can_sell_drink(self):
-        self.instance_of_customer = Customer('Jane', 200.00)
+        self.instance_of_customer = Customer('Jane', 200.00, 20)
         self.instance_of_pub.remove_drink(self.instance_of_drink1)
         self.instance_of_pub.add_cash(7)
         self.instance_of_customer.remove_cash(7)
@@ -36,6 +36,10 @@ class TestPub(unittest.TestCase):
         self.assertEqual(3, len(self.instance_of_pub.list_of_drinks))
         self.assertEqual(1007.00, self.instance_of_pub.till)
         self.assertEqual(193.00, self.instance_of_customer.wallet)
+
+    def test_customer_of_drinking_age(self):
+        # self.check_customer_of_drinking_age >= 18
+        self.assertEqual(True, self.check_customer_of_drinking_age(20))
 
 
     

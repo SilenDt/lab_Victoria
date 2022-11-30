@@ -9,3 +9,8 @@ class Pub:
     
     def add_cash(self, amount):
         self.till += amount
+
+    # def check_customer_of_drinking_age (self, age):
+    #     if age >= 18:
+    #         return True
+    #     return False
